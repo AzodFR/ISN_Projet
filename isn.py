@@ -1,5 +1,7 @@
 #s!/usr/bin/python
+#Import du module
 from tkinter import *
+#Création de la fonction qui créer la page
 def affichage():
 
 	root = Tk()
