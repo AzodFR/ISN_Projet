@@ -1,6 +1,12 @@
  #s!/usr/bin/python
 from tkinter import *
 import random
+global listMob
+global listStuff
+listMob = []
+liststuff = []
+
+#Constructeur de mob
 class basicMob:
 
 	def __init__(self, nom, hp, x, y):
@@ -8,15 +14,28 @@ class basicMob:
 		self.nom = nom
 		self.hpMob = hp
 		self.loot = random.randint(x, y)
+		appndmob(self)
 
-
+#Constructeur de stuff
 class stuff:
 	def __init__(self,nom,dmg,x):
 
 		self.nom = nom
 		self.dmgstuff = dmg
 		self.cost = x
+		appndstuff(self)
 
+#Ajouter chaque mob créer a sa lite
+def appndmob(x):
+	global listMob
+	listMob.append(x.nom)
+	
+#Ajouter chaque stuff créer a sa lite	
+def appndstuff(x):
+	global liststuff
+	liststuff.append(x.nom)	
+	
+	
 def affstuff(x):
 	print("Vous venez de faire l'acquisition de", x.nom , "et il vous permet de faire", x.dmgstuff , "dégats suplémentaires. Il vous coûtera la maudite somme de", x.cost , "coins !")
 
@@ -24,7 +43,7 @@ fs = stuff("Gloire du juste",25,5000)
 ts = stuff("Yeezy750",2000,300)
 qs = stuff("dildoverdose",2001,301)
 js = stuff("Léna",2002,302)
-liststuff = ['fs','ts','qs','js']
+
 listlong2 = len(liststuff)-1
 print()
 s = random.randint(0,listlong2)
@@ -64,7 +83,7 @@ fm = basicMob("Gargantua", 100, 5, 20)
 sm = basicMob("Trivador", 250, 50, 300)
 tm = basicMob("Vadot", 1000, 300, 1500)
 pm = basicMob("Théo le bg du 13",2800,5000,25000) 
-listMob = ['fm', 'sm', 'tm',"pm"]
+
 listlong = len(listMob)-1
 print()
 p = random.randint(0,listlong)
