@@ -25,12 +25,12 @@ class stuff:
 		self.cost = x
 		appndstuff(self)
 
-#Ajouter chaque mob créer a sa lite
+#Ajouter chaques mobs crées a sa lite
 def appndmob(x):
 	global listMob
 	listMob.append(x.nom)
 	
-#Ajouter chaque stuff créer a sa lite	
+#Ajouter chaques stuffs crées a sa lite	
 def appndstuff(x):
 	global liststuff
 	liststuff.append(x.nom)	
