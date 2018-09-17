@@ -1,4 +1,4 @@
-#s!/usr/bin/python
+ #s!/usr/bin/python
 from tkinter import *
 import random
 class basicMob:
@@ -9,6 +9,34 @@ class basicMob:
 		self.hpMob = hp
 		self.loot = random.randint(x, y)
 
+
+class stuff:
+	def __init__(self,nom,dmg,x):
+
+		self.nom = nom
+		self.dmgstuff = dmg
+		self.cost = x
+
+def affstuff(x):
+	print("Vous venez de faire l'acquisition de", x.nom , "et il vous permet de faire", x.dmgstuff , "dégats suplémentaires. Il vous coûtera la maudite somme de", x.cost , "coins !")
+
+fs = stuff("Gloire du juste",25,5000)
+ts = stuff("Yeezy750",2000,300)
+qs = stuff("dildoverdose",2001,301)
+js = stuff("Léna",2002,302)
+liststuff = ['fs','ts','qs','js']
+listlong2 = len(liststuff)-1
+print()
+s = random.randint(0,listlong2)
+if liststuff[s] == "fs":
+	affstuff(fs)
+elif liststuff[s] == "ts":
+	affstuff(ts)
+elif liststuff[s] == "qs":
+	affstuff(qs)
+elif liststuff[s] == "js":
+	affstuff(js)
+
 def affichage():
 
 	root = Tk()
@@ -16,8 +44,8 @@ def affichage():
 	ligne1 = canvas.create_line(350, 0, 350, 1080)
 	ligne2 = canvas.create_line(350,420,1920,420)
 	rectan1 = canvas.create_rectangle(0, 0, 351, 1080,fill='grey')
-	rectan2 = canvas.create_rectangle(351, 419, 1920,1080,fill='yellow')
-	rectan3 = canvas.create_rectangle(352, 0, 1920,418,fill='green',tags="click")
+	rectan2 = canvas.create_rectangle(351, 700, 1920,1080,fill='yellow')
+	rectan3 = canvas.create_rectangle(352, 0, 1920,699,fill='green',tags="click")
 	canvas.tag_bind("click","<Button-1>",clicked)
 	canvas.pack()
 
@@ -28,7 +56,6 @@ def affichage():
 def clicked(*args):
 	print("+1")
 
-affichage()
 def mob(x):
 	print('Le mob ', x.nom , ' possède ', x.hpMob , 'HP et looteras ', x.loot , ' coins !')
 
@@ -36,9 +63,10 @@ def mob(x):
 fm = basicMob("Gargantua", 100, 5, 20)
 sm = basicMob("Trivador", 250, 50, 300)
 tm = basicMob("Vadot", 1000, 300, 1500)
-listMob = ['fm', 'sm', 'tm']
+pm = basicMob("Théo le bg du 13",2800,5000,25000) 
+listMob = ['fm', 'sm', 'tm',"pm"]
 listlong = len(listMob)-1
-print(listlong)
+print()
 p = random.randint(0,listlong)
 if listMob[p] == "fm":
 	mob(fm)
@@ -46,3 +74,6 @@ elif listMob[p] == "sm":
 	mob(sm)
 elif listMob[p] == "tm":
 	mob(tm)
+elif listMob[p] == "pm":
+	mob(pm)
+affichage()
