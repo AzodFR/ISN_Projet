@@ -47,13 +47,13 @@ js = stuff("Léna",2002,302)
 listlong2 = len(liststuff)-1
 print()
 s = random.randint(0,listlong2)
-if liststuff[s] == "fs":
+if liststuff[s] == "Gloire du juste":
 	affstuff(fs)
-elif liststuff[s] == "ts":
+elif liststuff[s] == "Yeezy750":
 	affstuff(ts)
-elif liststuff[s] == "qs":
+elif liststuff[s] == "dildoverdose":
 	affstuff(qs)
-elif liststuff[s] == "js":
+elif liststuff[s] == "Léna":
 	affstuff(js)
 
 def affichage():
@@ -87,12 +87,12 @@ pm = basicMob("Théo le bg du 13",2800,5000,25000)
 listlong = len(listMob)-1
 print()
 p = random.randint(0,listlong)
-if listMob[p] == "fm":
+if listMob[p] == "Gargantua":
 	mob(fm)
-elif listMob[p] == "sm":
+elif listMob[p] == "Trivador":
 	mob(sm)
-elif listMob[p] == "tm":
+elif listMob[p] == "Vadot":
 	mob(tm)
-elif listMob[p] == "pm":
+elif listMob[p] == "Théo le bg du 13":
 	mob(pm)
 affichage()
