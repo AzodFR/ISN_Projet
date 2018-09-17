@@ -2,7 +2,7 @@
 from tkinter import *
 import random
 global listMob
-global listStuff
+global liststuff
 listMob = []
 liststuff = []
 
